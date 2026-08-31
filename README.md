@@ -7,9 +7,12 @@ This is **not** a fourth brain. Clone = copy. Child = reset stage, soften floats
 ```bash
 python -m pip install -e ".[dev]"
 make tests
-nanotot pack  --src examples/tiny --out child/
-nanotot child --src examples/tiny --out baby/
-nanotot child --src examples/tiny --out baby/ --keep-eye-md
+make examples
+nanotot pack     --src examples/tiny --out child/
+nanotot child    --src examples/tiny --out baby/
+nanotot child    --src examples/tiny --out baby/ --keep-eye-md --keep-ear-md
+nanotot inspect  --src examples/tiny
 ```
 
-`examples/tiny/` is a real organism tree you can pack today.
+`examples/tiny/` is a real organism tree you can pack today (core markdown +
+an eye belief + an honest ear miss).
