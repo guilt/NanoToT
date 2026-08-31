@@ -4,9 +4,12 @@ Tiny is a markdown cache that can grow ears, a mouth, and borrowed eyes. If a se
 
 This is **not** a fourth brain. Clone = copy. Child = reset stage, soften floats, keep distilled md.
 
-```text
-nanotot pack   --src /tiny --out child/
-nanotot child  --src /tiny --out baby/
+```bash
+python -m pip install -e ".[dev]"
+make tests
+nanotot pack  --src examples/tiny --out child/
+nanotot child --src examples/tiny --out baby/
+nanotot child --src examples/tiny --out baby/ --keep-eye-md
 ```
 
-A child does not grow a camera. It may inherit imported `eye.md` lines if you pass `--keep-eye-md`.
+`examples/tiny/` is a real organism tree you can pack today.
