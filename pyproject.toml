@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nanotot"
+version = "0.1.0"
+description = "Clone/child packer for /tiny/. Not a fourth brain."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE.md"}
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "pytest-cov", "coverage", "ruff>=0.5.6"]
+
+[project.scripts]
+nanotot = "nanotot.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["nanotot*"]
+
+[tool.pytest.ini_options]
+testpaths = ["nanotot/tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["nanotot"]
+omit = ["nanotot/tests/*", "nanotot/__main__.py"]
+
+[tool.coverage.report]
+precision = 2
+show_missing = true
+fail_under = 80.0
