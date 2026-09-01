@@ -31,7 +31,7 @@ def inventory(root: Path) -> dict:
         "stage": read_stage(root),
         "core": {name: (root / name).exists() for name in CORE_MD},
         "n_files": len(files),
-        "n_eye_md": len(list((root / "eye").glob("*.md"))) if (root / "eye").exists() else 0,
+        "n_eye_md": len(list(root.glob("eye/*.eye.md"))) + len(list((root / "eye").glob("*.md"))) if (root / "eye").exists() else 0,
         "n_ear_md": len(list((root / "ear").glob("*.md"))) if (root / "ear").exists() else 0,
         "n_media": sum(
             1
