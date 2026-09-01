@@ -6,6 +6,9 @@ This is **not** a fourth brain. Clone = copy. Child = reset stage, soften floats
 
 ```bash
 python -m pip install -e ".[dev]"
+# or: pipenv install --dev
+# family consumers, until PyPI:
+#   pip install "nanotot @ git+https://github.com/guilt/nanotot.git@bananey"
 make tests
 make examples
 nanotot pack     --src examples/tiny --out child/
